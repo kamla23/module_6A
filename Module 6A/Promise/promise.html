@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let checkNumber = new Promise(function(resolve, reject){
+    let num = Math.random();
+    console.log("random number is:", num);
+
+    if(num > 0.5){
+        resolve("Number is greater then 0.5");
+    }else{
+        reject("Number is less than or equal to 0.5");
+    }
+});
+
+checkNumber
+.then(function(result){
+    console.log("resolved:", result);
+})
+
+.catch(function(error){
+    console.log("rejected:",error);
+});
+
+    </script>
+</body>
+</html>

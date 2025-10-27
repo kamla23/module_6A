@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const mybelief = new Promise((resolve, reject) => {
+            const random = Math.random();
+            if(random > 0.5){
+                resolve("success Number is grater is than 0.5");
+            }else{
+                reject("failure Number is 0.5 or less");
+            }
+        });
+
+        mybelief
+            .then(msg => {
+                console.log(msg);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    </script>
+</body>
+</html>

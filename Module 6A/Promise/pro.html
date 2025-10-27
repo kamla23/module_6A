@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let kamla = new Promise(function(resolve, reject){
+            let ret = false;
+            if(ret){
+                resolve("it is successful");
+            }else{
+                reject("unseccesful");
+            }
+        });
+        kamla
+        .then(function(msg){
+            console.log("s", msg);
+        })
+        .catch(function(emsg){
+            console.log("e:", emsg);
+        })
+
+        //resuable
+
+        function waitForsecond(s){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`wait for ${s} seconds`);
+                }, s*1000);
+            })
+        }
+        waitForsecond(2).then((msg) => console.log(msg));
+
+        let fast = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Fast");
+            }, 2000);
+        })
+        console.log(fast);
+
+        let late = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Late");
+            }, 6000);
+        })
+        console.log(late);
+
+        
+
+    </script>
+</body>
+</html>
