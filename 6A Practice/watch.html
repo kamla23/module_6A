@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "b">0</h1>
+    <button id="btn" Onclick = increa()>Increament</button>
+    <button id="obtn" Onclick= decrea()>Dcreament</button>
+<script>
+    let n = 0;
+    function increa(){
+        n++;
+        const h = document.getElementById("b").innerText = n;
+        
+        const c = document.getElementById("obtn").removeAttribute("disabled");
+
+    } 
+
+    function decrea(){
+        
+        if(n !== 0){
+              n--;
+        }
+
+        const e = document.getElementById("b").innerText = n;
+
+        if(n == 0){
+            const b = document.getElementById("obtn").setAttribute("disabled", true);
+        }
+        
+    }
+
+</script>
+</body>
+</html>

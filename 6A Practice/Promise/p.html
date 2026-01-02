@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getevenSum(n, d){
+            const promise = new Promise((res, rej) => {
+                setTimeout(() => {
+                    if(n%2 === 0){
+                        res (n+2);
+                    }else{
+                        rej ("can't calculated");
+                    }
+                }, d)
+            })
+            return promise;
+        }
+        async function getSum(){
+            try{
+                const res = await Promise.any([getevenSum(1, 2000), getevenSum(2, 1000), getevenSum(4, 3000)]);
+                console.log(res);
+            }catch(err){
+                console.log("Error:", err);
+            }
+        }
+        getSum();
+
+    </script>
+</body>
+</html>  
